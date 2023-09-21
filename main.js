@@ -74,16 +74,16 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
       if (guestsCount < 5) {
-          const newInput = document.createElement("div");
+          const newInput = document.createElement("p");
           newInput.classList.add("input");
 
           const label = document.createElement("label");
           label.textContent = "Nombre de tu acompañante";
-          label.setAttribute("for", "acompanante");
+          label.setAttribute("for", "guest");
 
           const input = document.createElement("input");
           input.type = "text";
-          input.name = "acompanante";
+          input.name = "guest";
 
           newInput.appendChild(label);
           newInput.appendChild(input);
