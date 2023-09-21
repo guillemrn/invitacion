@@ -6,6 +6,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
   <link rel="stylesheet" href="styles.css">
   <title>Boda Particia & Enrique</title>
 </head>
@@ -13,86 +17,150 @@
   <header>
     <figure><img src="./images/logo.svg" alt="Patricia y Enrique logo"></figure>
     <nav>
-      <p>Lugar del evento</p>
-      <p>Nuestra historia</p>
-      <p>Confirmar asistencia</p>
+      <a href="#event">Lugar del evento</a>
+      <a href="#history">Nuestra historia</a>
+      <a href="#confirm">Confirmar asistencia</a>
     </nav>
+    <div id="menu-icon">&#9776;</div>
   </header>
+  <div id="menu">
+    <a href="#event">Lugar del evento</a>
+    <a href="#history">Nuestra historia</a>
+    <a href="#confirm">Confirmar asistencia</a>
+</div>
   <section class="hero">
     <div class="hero__text-container">
       <h1>Celebra con nosotros nuestro 25° aniversario</h1>
       <p>¡Ven y comparte este especial momento lleno de amor y alegría! Será un día inolvidable que nos encantaría compartir contigo.</p>
     </div>
-    <button class="button">Confirma tu asistencia</button>
+    <a class="button" href="#confirm">Confirma tu asistencia</a>
   </section>
   <section class="countdown">
     <div class="countdown__elements">
-      <p class="countdown__item">106<span>días</span></p>
-      <p class="countdown__item">06<span>horas</span></p>
-      <p class="countdown__item">21<span>minutos</span></p>
-      <p class="countdown__item">43<span>segundos</span></p>
+      <div class="countdown__item">
+        <p id="js-clock-days">00</p>
+        <span>días</span>
+      </div>
+      <div class="countdown__item">
+        <p id="js-clock-hours">00</p>
+        <span>horas</span>
+      </div>
+      <div class="countdown__item">
+        <p id="js-clock-minutes">00</p>
+        <span>minutos</span>
+      </div>
+      <div class="countdown__item">
+        <p id="js-clock-seconds">00</p>
+        <span>segundos</span>
+      </div>
     </div>
     <h3 class="countdown__date">2 • Diciembre • 2023</h3>
     <div class="line"></div>
     <h3 class="countdown__place">Guadalajara, Jalisco</h3>
   </section>
-  <section class="event">
+  <section class="event" id="event">
     <h4>Lugar del evento</h4>
-    <div class="event__card">
-      <h4>Ceremonia</h4>
-      <p>Templo de San Francisco de Sales</p>
-      <span>6:00 pm</span>
-      <button class="button">Ver ubicación</button>
-    </div>
-    <div class="event__card">
-      <h4>Recepción</h4>
-      <p>La Cúpula Eventos</p>
-      <span>8:00 pm a 2:00 am</span>
-      <button class="button">Ver ubicación</button>
+    <div class="cards">
+      <div class="event__card">
+        <figure><img src="./images/church_fill.svg" alt=""></figure>
+        <h5>Ceremonia</h5>
+        <div class="place-container">
+          <p>Templo de San Francisco de Sales</p>
+          <span>6:00 pm</span>
+        </div>
+        <a class="button" href="https://maps.app.goo.gl/rqabmwLeqU4zb9uU6" target="_blank">Ver ubicación</a>
+      </div>
+      <div class="event__card">
+        <figure><img src="./images/champagne_fill.svg" alt=""></figure>
+        <h5>Recepción</h5>
+        <div class="place-container">
+          <p>La Cúpula Eventos</p>
+          <span>8:00 pm a 2:00 am</span>
+        </div>
+        <a class="button" href="https://maps.app.goo.gl/sCycTwc5ZWX6ja9c9" target="_blank">Ver ubicación</a>
+      </div>
     </div>
   </section>
   <section class="itinerary">
     <h4>Itinerario</h4>
-    <figure class="itinerary__image">X</figure>
+    <figure class="itinerary__image"><img src="./images/itinerario.svg" alt=""></figure>
   </section>
-  <section class="our-history">
+  <section class="our-history" id="history">
     <h4>Nuestra historia</h4>
-    carousel --->
-  </section>
-  <section class="dress-code">
-    <h4>Código de vestimenta</h4>
-    <figure class="dress-code__image">X</figure>
-    <p>Formal</p>
-  </section>
-  <section class="wishlist">
-    <h4>Mesa de regalos</h4>
-    <p>Agradecemos tu compañía. El regalo es completamente opcional, mientras que tu asistencia es esencial.</p>
-    <p>Si deseas expresar tu cariño de una manera especial, puedes contribuir sumando kilómetros a nuestro viaje. Para tu comodidad, hemos dispuesto un cofre en la recepción donde podrás depositar tu contribución en efectivo.</p>
-    <figure class="gift-icon">X</figure>
-  </section>
-  <section class="confirm-form">
-    <h4>Confirma tu asistencia</h4>
-    <p>Con el objetivo de crear un ambiente tranquilo y relajado durante nuestro evento, hemos optado por hacerlo exclusivo para adultos. </p>
-    <p>Agradecemos profundamente su comprensión y esperamos con entusiasmo contar con su presencia.</p>
-    <form action="">
-      <div class="input">
-        <label for="">Nombre</label>
-        <input type="text">
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide">
+            <figure><img src="./images/01.png" alt=""></figure>
+          </li>
+          <li class="glide__slide">
+            <figure><img src="./images/02.png" alt=""></figure>
+          </li>
+          <li class="glide__slide">
+            <figure><img src="./images/03.png" alt=""></figure>
+          </li>
+          <li class="glide__slide">
+            <figure><img src="./images/04.png" alt=""></figure>
+          </li>
+          <li class="glide__slide">
+            <figure><img src="./images/05.png" alt=""></figure>
+          </li>
+        </ul>
       </div>
-      <div class="input">
-        <label for="">Teléfono</label>
-        <input type="tel">
+      <div class="glide__bullets" data-glide-el="controls[nav]">
+        <button class="glide__bullet" data-glide-dir="=0"></button>
+        <button class="glide__bullet" data-glide-dir="=1"></button>
+        <button class="glide__bullet" data-glide-dir="=2"></button>
+        <button class="glide__bullet" data-glide-dir="=3"></button>
+        <button class="glide__bullet" data-glide-dir="=4"></button>
       </div>
-      <div class="input">
-        <label for="">Nombre de tu acompañante</label>
-        <input type="text">
-      </div>
-      <button class="secondary-btn">Agregar acompañante</button>
-    </form>
-    <button class="button">Confirmar asistencia</button>
+    </div>
   </section>
-  <footer>
-    Hecho por Gaby y Memo
+  <section class="dress-code__container">
+    <div class="dress-code">
+      <h4>Código de vestimenta</h4>
+      <figure class="dress-code__image"><img src="./images/dresscode.svg" alt=""></figure>
+      <p>Formal</p>
+      <span><b>Nota:</b> Te agradeceríamos no vestirte con tonos plateados.</span>
+    </div>
+  </section>
+  <section class="wishlist__container">
+    <div class="wishlist">
+      <h4>Mesa de regalos</h4>
+      <p>Agradecemos tu compañía. El regalo es completamente opcional, mientras que tu asistencia es esencial.</p>
+      <p>Si deseas expresar tu cariño de una manera especial, puedes contribuir sumando kilómetros a nuestro viaje. Para tu comodidad, hemos dispuesto un cofre en la recepción donde podrás depositar tu contribución en efectivo.</p>
+      <figure class="gift-icon"><img src="./images/gift_2_fill 1.svg" alt=""></figure>
+    </div>
+  </section>
+  <section class="confirm-form__container" id="confirm">
+    <div class="confirm-form" id="confirm">
+      <h4>Confirma tu asistencia</h4>
+      <p>Con el objetivo de crear un ambiente tranquilo y relajado durante nuestro evento, hemos optado por hacerlo <span>exclusivo para adultos.</span> </p>
+      <p>Agradecemos profundamente su comprensión y esperamos con entusiasmo contar con su presencia.</p>
+      <form action="">
+        <div id="inputs-container">
+          <div class="input">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="input">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div class="input">
+            <label for="guest">Nombre de tu acompañante</label>
+            <input type="text" id="guest">
+          </div>
+        </div>
+        <button class="secondary-btn" id="agregar-btn">Agregar acompañante</button>
+        <button class="button" id="confirmar-btn" type="submit" onclick="submitForm()">Confirmar Asistencia</button>
+      </form>
+    </div>
+  </section>
+  <footer style="padding: 2rem;">
+    Hecho con ❤️ por Gabriela
   </footer>
+  <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>
