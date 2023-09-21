@@ -103,16 +103,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const submitForm = () => {
-  Swal.fire({
-    title: 'Gracias por tu confirmación',
-    text: 'Invitacion enviada correctamente',
-    icon: 'success',
-    confirmButtonText: 'Intentar de nuevo',
-    confirmButtonColor: "#0B7A44",
-    iconColor: "#0B7A44"
-  })
-}
+// const submitForm = () => {
+//   Swal.fire({
+//     title: 'Gracias por tu confirmación',
+//     text: 'Invitacion enviada correctamente',
+//     icon: 'success',
+//     confirmButtonText: 'Intentar de nuevo',
+//     confirmButtonColor: "#0B7A44",
+//     iconColor: "#0B7A44"
+//   })
+// }
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuIcon = document.getElementById("menu-icon");
