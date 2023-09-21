@@ -6,9 +6,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+  <link rel="stylesheet" href="./glide.core.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="sweetalert2.min.js"></script>
   <link rel="stylesheet" href="sweetalert2.min.css">
   <link rel="stylesheet" href="styles.css">
   <title>Boda Particia & Enrique</title>
@@ -137,7 +136,7 @@
       <h4>Confirma tu asistencia</h4>
       <p>Con el objetivo de crear un ambiente tranquilo y relajado durante nuestro evento, hemos optado por hacerlo <span>exclusivo para adultos.</span> </p>
       <p>Agradecemos profundamente su comprensión y esperamos con entusiasmo contar con su presencia.</p>
-      <form name="confirmation" method="POST" netlify>
+      <form name="confirmation" method="POST" data-netlify="true">
         <div id="inputs-container">
           <div class="input">
             <label for="name">Nombre</label>
@@ -145,7 +144,7 @@
           </div>
           <div class="input">
             <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" required>
+            <input type="tel" id="phone">
           </div>
           <div class="input">
             <label for="guest">Nombre de tu acompañante</label>
@@ -160,7 +159,7 @@
   <footer style="padding: 2rem;">
     Hecho con ❤️ por Gabriela
   </footer>
-  <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+  <script src="./glide.min.js"></script>
   <script src="./main.js"></script>
 </body>
 </html>
