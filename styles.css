@@ -269,6 +269,14 @@ section h4 {
   margin: 0 auto;
   margin-top: 100px;
   width: 70rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  gap: 20px;
+}
+.confirm-form h4 {
+  margin: 0;
 }
 .confirm-form p {
   color: var(--primary);
@@ -333,6 +341,7 @@ label {
 }
 .confirm-form .button {
   width: 100%;
+  text-align: center;
 }
 .confirm-form .button:hover {
   color: var(--primary);
@@ -400,6 +409,10 @@ footer {
 }
 #menu {
   display: none;
+}
+
+.glide__slide img {
+  border-radius: 2px;
 }
 
 /* Estilos para pantallas menores a 768px */
