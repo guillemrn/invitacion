@@ -20,8 +20,8 @@ html{
 header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 20px 0;
+  justify-content: space-between;
+  padding: 3rem;
 }
 header nav {
   display: flex;
@@ -348,13 +348,23 @@ label {
   border: 1px solid var(--primary);
 }
 
-footer {
-  margin: 6rem 0;
-  color: var(--primary, #102C57);
+.footer {
+  color: var(--primary);
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
   line-height: 2.4rem; /* 150% */
+  border-radius: 0.2rem;
+  background: rgba(248, 240, 229, 0.70);
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 70rem;
+  margin: 100px auto;
+}
+.footer a {
+  color: var(--primary);
 }
 
 .glide {
@@ -410,9 +420,59 @@ footer {
 #menu {
   display: none;
 }
+.glide__slide figure {
+  position: relative;
+  width: 353px;
+  margin: 0 auto;
+}
+.slide__text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: var(--white);
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 35.3rem;
+  height: 23.6rem;
+  border-radius: 0.1rem;
+  background: linear-gradient(0deg, #061326 -8.36%, rgba(6, 19, 38, 0.39) 42.74%, rgba(6, 19, 38, 0.00) 93.05%);
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column;
+  justify-content: flex-end;
+  text-align: left;
+}
+.glide__slide--date {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
 
 .glide__slide img {
   border-radius: 2px;
+}
+
+#cuadrado {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--cta);
+  /* opacity: .5; */
+  border-radius: 2px;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cuadrado button {
+  border: none;
+  background: transparent;
 }
 
 /* Estilos para pantallas menores a 768px */
@@ -432,25 +492,34 @@ footer {
     background-color: #fff;
     color: var(--primary);
     position: absolute;
-    top: -100%; /* Inicialmente, el menú estará fuera de la pantalla */
-    right: 20px;
-    padding: 10px;
+    left: 6px;
+    right: 0;
+    padding: 20px 20px 10px 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: top 0.3s ease; /* Agregamos una transición suave */
+    animation: slideDown 0.5s ease-in-out; /* Agregamos la animación */
+    width: 96%;
+    border: 1px solid var(--primary);
   }
-
+  @keyframes slideDown {
+    from {
+      top: -110px; /* Comenzamos desde arriba */
+    }
+    to {
+      top: 110px; /* Posición final del menú */
+    }
+  }
   #menu.show-menu {
-    top: 60px; /* Posición final del menú */
+    display: block; /* Posición final del menú */
 }
 
   #menu a {
-      display: block;
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-      transition: 300ms;
+    display: block;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    transition: 300ms;
   }
 
   #menu a:hover {
@@ -475,6 +544,7 @@ footer {
   .confirm-form__container {
     padding: 0 20px;
   }
+  .footer,
   .dress-code,
   .wishlist,
   .confirm-form {
@@ -495,6 +565,14 @@ footer {
   }
   .itinerary__image img {
     width: 100%;
+  }
+  footer {
+    padding: 0 20px;
+  }
+  .footer {
+    flex-flow: column;
+    gap: 20px;
+    align-items: flex-start;
   }
 }
 
@@ -518,5 +596,9 @@ footer {
   }
   .line {
     width: 70%;
+  }
+  .slide__text-container {
+    font-size: 1.4rem;
+    padding: 2rem;
   }
 }

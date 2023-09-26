@@ -63,45 +63,45 @@ countdown()
 new Glide('.glide').mount()
 
 
-// ------------ Formulario -------------
-document.addEventListener("DOMContentLoaded", function () {
-  const inputsContainer = document.getElementById("inputs-container");
-  const addInput = document.getElementById("agregar-btn");
+// // ------------ Formulario -------------
+// document.addEventListener("DOMContentLoaded", function () {
+//   const inputsContainer = document.getElementById("inputs-container");
+//   const addInput = document.getElementById("agregar-btn");
 
-  let guestsCount = 0;
+//   let guestsCount = 0;
 
-  addInput.addEventListener("click", function (e) {
-    e.preventDefault();
+//   addInput.addEventListener("click", function (e) {
+//     e.preventDefault();
 
-      if (guestsCount < 5) {
-          const newInput = document.createElement("p");
-          newInput.classList.add("input");
+//       if (guestsCount < 5) {
+//           const newInput = document.createElement("p");
+//           newInput.classList.add("input");
 
-          const label = document.createElement("label");
-          label.textContent = "Nombre de tu acompañante";
-          label.setAttribute("for", "guest");
+//           const label = document.createElement("label");
+//           label.textContent = "Nombre de tu acompañante";
+//           label.setAttribute("for", "guest");
 
-          const input = document.createElement("input");
-          input.type = "text";
-          input.name = "guest";
+//           const input = document.createElement("input");
+//           input.type = "text";
+//           input.name = "guest";
 
-          newInput.appendChild(label);
-          newInput.appendChild(input);
+//           newInput.appendChild(label);
+//           newInput.appendChild(input);
 
-          inputsContainer.appendChild(newInput);
-          guestsCount++;
-      } else {
-          Swal.fire({
-              title: 'Lo sentimos',
-              text: 'Solo puedes agregar hasta 6 invitados',
-              icon: 'error',
-              confirmButtonText: 'Intentar de nuevo',
-              confirmButtonColor: "#890F3E",
-              iconColor: "#890F3E"
-          })
-      }
-  });
-});
+//           inputsContainer.appendChild(newInput);
+//           guestsCount++;
+//       } else {
+//           Swal.fire({
+//               title: 'Lo sentimos',
+//               text: 'Solo puedes agregar hasta 6 invitados',
+//               icon: 'error',
+//               confirmButtonText: 'Intentar de nuevo',
+//               confirmButtonColor: "#890F3E",
+//               iconColor: "#890F3E"
+//           })
+//       }
+//   });
+// });
 
 // const submitForm = () => {
 //   Swal.fire({
@@ -122,3 +122,22 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.toggle("show-menu");
   });
 });
+
+const audioElement = document.getElementById('miAudio');
+const playIcon = document.getElementById('playIcon');
+
+function togglePlayPause() {
+  try {
+    if (audioElement.paused) {
+      audioElement.play();
+      playIcon.src = "./images/pause_circle_fill.svg";
+      playIcon.alt = "Pausa";
+    } else {
+      audioElement.pause();
+      playIcon.src = "./images/play_circle_fill.svg";
+      playIcon.alt = "Reproducir";
+    }
+  } catch (error) {
+    console.error('Error al reproducir/pausar el audio:', error);
+  }
+}

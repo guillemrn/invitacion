@@ -82,7 +82,7 @@
   </section>
   <section class="itinerary">
     <h4>Itinerario</h4>
-    <figure class="itinerary__image"><img src="./images/itinerario.svg" alt=""></figure>
+    <figure class="itinerary__image"><img src="./images/itinerary.svg" alt=""></figure>
   </section>
   <section class="our-history" id="history">
     <h4>Nuestra historia</h4>
@@ -90,19 +90,49 @@
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           <li class="glide__slide">
-            <figure><img src="./images/01.png" alt=""></figure>
+            <figure>
+              <img src="./images/01.png" alt="">
+              <div class="slide__text-container">
+                <span class="glide__slide--date">23/08/1990</span>
+                <p>Cuando comenzó nuestra historia juntos, nos convertimos en pareja, y tras ocho años de un hermoso noviazgo, llegó el tan esperado "¿Quieres casarte conmigo?"...</p>
+              </div>
+            </figure>
           </li>
           <li class="glide__slide">
-            <figure><img src="./images/02.png" alt=""></figure>
+            <figure>
+              <img src="./images/02.png" alt="">
+              <div class="slide__text-container">
+                <span class="glide__slide--date">25/09/1998</span>
+                <p>Nuestra boda civil, llena de nervios pero repleta de felicidad al dar ese primer gran paso juntos...</p>
+              </div>
+            </figure>
           </li>
           <li class="glide__slide">
-            <figure><img src="./images/03.png" alt=""></figure>
+            <figure>
+              <img src="./images/03.png" alt="">
+              <div class="slide__text-container">
+                <span class="glide__slide--date">21/11/1998</span>
+                <p>El gran día llegó: nuestra boda religiosa, un evento cargado de amor en el que nos prometimos estar juntos por el resto de nuestras vidas.</p>
+              </div>
+            </figure>
           </li>
           <li class="glide__slide">
-            <figure><img src="./images/04.png" alt=""></figure>
+            <figure>
+              <img src="./images/04.png" alt="">
+              <div class="slide__text-container">
+                <span class="glide__slide--date">09/12/1999</span>
+                <p>Iniciamos nuestra hermosa familia con la llegada de uno de nuestros más grandes sueños: ser padres.</p>
+              </div>
+            </figure>
           </li>
           <li class="glide__slide">
-            <figure><img src="./images/06.png" alt=""></figure>
+            <figure>
+              <img src="./images/06.png" alt="">
+              <div class="slide__text-container">
+                <span class="glide__slide--date">21/11/2023</span>
+                <p>Y 25 años después, seguimos cumpliendo la promesa de permanecer unidos, formando un hogar lleno de amor junto a nuestra familia.</p>
+              </div>
+            </figure>
           </li>
         </ul>
       </div>
@@ -156,8 +186,21 @@
       <a class="button" id="confirmar-btn" href="https://wa.me/5213333998437?text=Hola!%20Quiero%20confirmar%20mi%20asistencia%20a%20la%20boda" target="_blank">Confirmar Asistencia</a>
     </div>
   </section>
-  <footer style="padding: 2rem;">
-    Hecho con ❤️ por Gabriela
+  <div id="cuadrado">
+    <audio autoplay id="miAudio" preload="auto">
+      <source src="./images/Castillos de hielo.mp3" type="audio/mpeg">
+    </audio>
+    <button onclick="togglePlayPause()" onclick="togglePlayPause()">
+      <figure>
+        <img src="./images/pause_circle_fill.svg" alt="" id="playIcon">
+      </figure>
+    </button>
+  </div>
+  <footer>
+    <div class="footer">
+      <p>Hecho por <a href="https://guillemrn.webflow.io/" target="_balnk">Guillermo</a></p>
+      <p>¿Te interesa una invitación como esta? <a href="https://wa.me/5213315482164?text=Me%20interesa%20una%20invitación%20digital" target="_blank">¡Contáctanos!</a></p>
+    </div>
   </footer>
   <script src="./glide.min.js"></script>
   <script src="./main.js"></script>
